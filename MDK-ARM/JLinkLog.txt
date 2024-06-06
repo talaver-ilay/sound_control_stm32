@@ -1,0 +1,139 @@
+T4BF4 000:145.730   SEGGER J-Link V7.86a Log File
+T4BF4 000:145.912   DLL Compiled: Feb 22 2023 16:26:41
+T4BF4 000:145.918   Logging started @ 2023-03-23 20:28
+T4BF4 000:145.923 - 145.925ms
+T4BF4 000:145.933 JLINK_SetWarnOutHandler(...)
+T4BF4 000:145.939 - 0.008ms
+T4BF4 000:145.945 JLINK_OpenEx(...)
+T4BF4 000:147.467   Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+T4BF4 000:147.889   Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+T4BF4 000:150.252   Hardware: V8.00
+T4BF4 000:150.269   S/N: 1445413060
+T4BF4 000:150.276   OEM: SEGGER
+T4BF4 000:150.283   Feature(s): RDI,FlashDL,FlashBP,JFlash
+T4BF4 000:151.599   TELNET listener socket opened on port 19021
+T4BF4 000:151.957   WEBSRV WEBSRV_Init(): Starting webserver thread(s)
+T4BF4 000:152.223   WEBSRV Webserver running on local port 19080
+T4BF4 000:163.570 - 17.638ms returns "O.K."
+T4BF4 000:163.599 JLINK_GetEmuCaps()
+T4BF4 000:163.605 - 0.008ms returns 0xB9FF7BBF
+T4BF4 000:163.612 JLINK_TIF_GetAvailable(...)
+T4BF4 000:163.810 - 0.205ms
+T4BF4 000:163.824 JLINK_SetErrorOutHandler(...)
+T4BF4 000:163.829 - 0.007ms
+T4BF4 000:163.849 JLINK_ExecCommand("ProjectFile = "C:\Users\admin\Desktop\KEYBOARD\code\AYK_encoderv2\MDK-ARM\JLinkSettings.ini"", ...). 
+T4BF4 000:176.724   Ref file found at: C:\Keil_v5\ARM\Segger\JLinkDevices.ref
+T4BF4 000:176.811   REF file references invalid XML file: C:\Program Files\SEGGER\JLink\JLinkDevices.xml
+T4BF4 000:176.960 - 13.116ms returns 0x00
+T4BF4 000:176.978 JLINK_ExecCommand("Device = STM32F401CCUx", ...). 
+T4BF4 000:177.236   Device "STM32F401CC" selected.
+T4BF4 000:177.426 - 0.446ms returns 0x00
+T4BF4 000:177.436 JLINK_ExecCommand("DisableConnectionTimeout", ...). 
+T4BF4 000:177.443 - 0.003ms returns 0x01
+T4BF4 000:177.449 JLINK_GetHardwareVersion()
+T4BF4 000:177.454 - 0.006ms returns 80000
+T4BF4 000:177.462 JLINK_GetDLLVersion()
+T4BF4 000:177.466 - 0.006ms returns 78601
+T4BF4 000:177.472 JLINK_GetOEMString(...)
+T4BF4 000:177.477 JLINK_GetFirmwareString(...)
+T4BF4 000:177.482 - 0.006ms
+T4BF4 000:177.489 JLINK_GetDLLVersion()
+T4BF4 000:177.493 - 0.006ms returns 78601
+T4BF4 000:177.498 JLINK_GetCompileDateTime()
+T4BF4 000:177.503 - 0.006ms
+T4BF4 000:177.510 JLINK_GetFirmwareString(...)
+T4BF4 000:177.514 - 0.006ms
+T4BF4 000:177.520 JLINK_GetHardwareVersion()
+T4BF4 000:177.524 - 0.006ms returns 80000
+T4BF4 000:177.572 JLINK_GetSN()
+T4BF4 000:177.578 - 0.008ms returns 1445413060
+T4BF4 000:177.584 JLINK_GetOEMString(...)
+T4BF4 000:177.591 JLINK_TIF_Select(JLINKARM_TIF_SWD)
+T4BF4 000:178.384 - 0.801ms returns 0x00
+T4BF4 000:178.398 JLINK_HasError()
+T4BF4 000:178.411 JLINK_SetSpeed(5000)
+T4BF4 000:178.498 - 0.094ms
+T4BF4 000:178.755 JLINK_HasError()
+T4BF4 000:178.764 JLINK_SetResetType(JLINKARM_RESET_TYPE_NORMAL)
+T4BF4 000:178.769 - 0.007ms returns JLINKARM_RESET_TYPE_NORMAL
+T4BF4 000:178.779 JLINK_Reset()
+T4BF4 000:179.171   InitTarget() start
+T4BF4 000:179.188    J-Link Script File: Executing InitTarget()
+T4BF4 000:179.495   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:181.756   Error: Failed to initialized DAP.
+T4BF4 000:181.778   Can not attach to CPU. Trying connect under reset.
+T4BF4 000:232.174   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:234.832   Error: Failed to initialized DAP.
+T4BF4 000:234.881   Connecting to CPU via connect under reset failed.
+T4BF4 000:285.593   InitTarget() end - Took 107ms
+T4BF4 000:285.633   Connect failed. Resetting via Reset pin and trying again.
+T4BF4 000:347.301   InitTarget() start
+T4BF4 000:347.326    J-Link Script File: Executing InitTarget()
+T4BF4 000:347.540   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:349.637   Error: Failed to initialized DAP.
+T4BF4 000:349.649   Can not attach to CPU. Trying connect under reset.
+T4BF4 000:400.830   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:403.718   Error: Failed to initialized DAP.
+T4BF4 000:403.740   Connecting to CPU via connect under reset failed.
+T4BF4 000:454.021   InitTarget() end - Took 107ms
+T4BF4 000:454.093 - 275.316ms
+T4BF4 000:454.112 JLINK_GetId()
+T4BF4 000:454.390   InitTarget() start
+T4BF4 000:454.404    J-Link Script File: Executing InitTarget()
+T4BF4 000:454.653   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:456.749   Error: Failed to initialized DAP.
+T4BF4 000:456.763   Can not attach to CPU. Trying connect under reset.
+T4BF4 000:507.915   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:510.819   Error: Failed to initialized DAP.
+T4BF4 000:510.842   Connecting to CPU via connect under reset failed.
+T4BF4 000:561.108   InitTarget() end - Took 107ms
+T4BF4 000:561.133   Connect failed. Resetting via Reset pin and trying again.
+T4BF4 000:622.069   InitTarget() start
+T4BF4 000:622.095    J-Link Script File: Executing InitTarget()
+T4BF4 000:622.372   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:625.109   Error: Failed to initialized DAP.
+T4BF4 000:625.132   Can not attach to CPU. Trying connect under reset.
+T4BF4 000:675.610   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:677.727   Error: Failed to initialized DAP.
+T4BF4 000:677.741   Connecting to CPU via connect under reset failed.
+T4BF4 000:728.357   InitTarget() end - Took 107ms
+T4BF4 000:728.382 - 274.272ms returns 0x00000000
+T4BF4 000:728.395 JLINK_GetId()
+T4BF4 000:728.682   InitTarget() start
+T4BF4 000:728.695    J-Link Script File: Executing InitTarget()
+T4BF4 000:729.031   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:731.826   Error: Failed to initialized DAP.
+T4BF4 000:731.850   Can not attach to CPU. Trying connect under reset.
+T4BF4 000:782.383   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:784.428   Error: Failed to initialized DAP.
+T4BF4 000:784.443   Connecting to CPU via connect under reset failed.
+T4BF4 000:834.834   InitTarget() end - Took 106ms
+T4BF4 000:834.860   Connect failed. Resetting via Reset pin and trying again.
+T4BF4 000:897.096   InitTarget() start
+T4BF4 000:897.117    J-Link Script File: Executing InitTarget()
+T4BF4 000:897.362   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:899.834   Error: Failed to initialized DAP.
+T4BF4 000:899.844   Can not attach to CPU. Trying connect under reset.
+T4BF4 000:951.199   SWD selected. Executing JTAG -> SWD switching sequence.
+T4BF4 000:953.826   Error: Failed to initialized DAP.
+T4BF4 000:953.851   Connecting to CPU via connect under reset failed.
+T4BF4 001:004.171   InitTarget() end - Took 107ms
+T4BF4 001:004.193 - 275.801ms returns 0x00000000
+T4BF4 001:006.815 JLINK_GetFirmwareString(...)
+T4BF4 001:006.826 - 0.012ms
+T4BF4 003:328.324 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)
+T4BF4 003:328.761 - 0.444ms returns 0x00
+T4BF4 003:328.774 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)
+T4BF4 003:329.109 - 0.342ms returns 0x00
+T4BF4 003:329.121 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)
+T4BF4 003:329.474 - 0.359ms returns 0x00
+T4BF4 003:329.486 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)
+T4BF4 003:329.778 - 0.296ms returns 0x00
+T4BF4 003:329.786 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)
+T4BF4 003:330.079 - 0.296ms returns 0x00
+T4BF4 003:330.203 JLINK_SWO_Control(JLINKARM_SWO_CMD_GET_SPEED_INFO, ...)
+T4BF4 003:330.496 - 0.297ms returns 0x00
+T4BF4 004:410.721 JLINK_Close()
+T4BF4 004:435.684 - 24.981ms
+T4BF4 004:435.705   
+T4BF4 004:435.710   Closed
