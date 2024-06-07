@@ -154,8 +154,8 @@ int main(void)
 			stat_led(&win_media.state);
 			mute_led(&win_media.mute);
 		//}else if(!connect_state && connect_flag){
-			full_led();
-			clean_oled();
+//			full_led();
+//			clean_oled();
 		//	connect_flag = false;
 		//}
     /* USER CODE END WHILE */
