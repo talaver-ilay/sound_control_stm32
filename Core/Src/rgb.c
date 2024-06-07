@@ -21,8 +21,8 @@ void rgb_wight(uint8_t* count){
 			for(uint8_t i = 0;i<4;i++) ws2812_pixel_rgb_to_buf_dma(*count, *count, *count, i);
 			HAL_TIM_PWM_Start_DMA(&htim4,TIM_CHANNEL_3,(uint32_t*)&BUF_DMA,((ARRAY_LEN)*2)-4 );		
 }
-void rgb_yellow(uint8_t* count){
-			for(uint8_t i = 0;i<4;i++) ws2812_pixel_rgb_to_buf_dma(*count, *count, 0, i);
+void rgb_orange(uint8_t* count){
+			for(uint8_t i = 0;i<4;i++) ws2812_pixel_rgb_to_buf_dma(*count, *count/4, 0, i);
 			HAL_TIM_PWM_Start_DMA(&htim4,TIM_CHANNEL_3,(uint32_t*)&BUF_DMA,((ARRAY_LEN)*2)-4 );		
 }
 void rgb_violet(uint8_t* count){

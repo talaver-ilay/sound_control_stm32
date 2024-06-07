@@ -80,12 +80,11 @@ Section Cross References
     main.o(i.press_key) refers to usb_device.o(.bss) for hUsbDeviceFS
     main.o(i.press_key) refers to main.o(.data) for consumer
     main.o(i.rgb_pulse) refers to rgb.o(i.rgb_red) for rgb_red
-    main.o(i.rgb_pulse) refers to rgb.o(i.rgb_green) for rgb_green
-    main.o(i.rgb_pulse) refers to rgb.o(i.rgb_blue) for rgb_blue
-    main.o(i.rgb_pulse) refers to rgb.o(i.rgb_wight) for rgb_wight
-    main.o(i.rgb_pulse) refers to rgb.o(i.rgb_yellow) for rgb_yellow
     main.o(i.rgb_pulse) refers to rgb.o(i.rgb_violet) for rgb_violet
+    main.o(i.rgb_pulse) refers to rgb.o(i.rgb_blue) for rgb_blue
     main.o(i.rgb_pulse) refers to rgb.o(i.rgb_cyan) for rgb_cyan
+    main.o(i.rgb_pulse) refers to rgb.o(i.rgb_green) for rgb_green
+    main.o(i.rgb_pulse) refers to rgb.o(i.rgb_wight) for rgb_wight
     main.o(i.rgb_pulse) refers to stm32f4xx_it.o(.data) for time9_flag
     main.o(i.rgb_pulse) refers to main.o(.data) for count
     stm32f4xx_it.o(i.DMA1_Stream7_IRQHandler) refers to stm32f4xx_hal_dma.o(i.HAL_DMA_IRQHandler) for HAL_DMA_IRQHandler
@@ -279,6 +278,10 @@ Section Cross References
     rgb.o(i.rgb_green) refers to ws2812.o(.bss) for BUF_DMA
     rgb.o(i.rgb_green) refers to tim.o(.bss) for htim4
     rgb.o(i.rgb_init) refers to ws2812.o(i.ws2812_init) for ws2812_init
+    rgb.o(i.rgb_orange) refers to ws2812.o(i.ws2812_pixel_rgb_to_buf_dma) for ws2812_pixel_rgb_to_buf_dma
+    rgb.o(i.rgb_orange) refers to stm32f4xx_hal_tim.o(i.HAL_TIM_PWM_Start_DMA) for HAL_TIM_PWM_Start_DMA
+    rgb.o(i.rgb_orange) refers to ws2812.o(.bss) for BUF_DMA
+    rgb.o(i.rgb_orange) refers to tim.o(.bss) for htim4
     rgb.o(i.rgb_red) refers to ws2812.o(i.ws2812_pixel_rgb_to_buf_dma) for ws2812_pixel_rgb_to_buf_dma
     rgb.o(i.rgb_red) refers to stm32f4xx_hal_tim.o(i.HAL_TIM_PWM_Start_DMA) for HAL_TIM_PWM_Start_DMA
     rgb.o(i.rgb_red) refers to ws2812.o(.bss) for BUF_DMA
@@ -291,10 +294,6 @@ Section Cross References
     rgb.o(i.rgb_wight) refers to stm32f4xx_hal_tim.o(i.HAL_TIM_PWM_Start_DMA) for HAL_TIM_PWM_Start_DMA
     rgb.o(i.rgb_wight) refers to ws2812.o(.bss) for BUF_DMA
     rgb.o(i.rgb_wight) refers to tim.o(.bss) for htim4
-    rgb.o(i.rgb_yellow) refers to ws2812.o(i.ws2812_pixel_rgb_to_buf_dma) for ws2812_pixel_rgb_to_buf_dma
-    rgb.o(i.rgb_yellow) refers to stm32f4xx_hal_tim.o(i.HAL_TIM_PWM_Start_DMA) for HAL_TIM_PWM_Start_DMA
-    rgb.o(i.rgb_yellow) refers to ws2812.o(.bss) for BUF_DMA
-    rgb.o(i.rgb_yellow) refers to tim.o(.bss) for htim4
     usb_device.o(i.MX_USB_DEVICE_Init) refers to usbd_core.o(i.USBD_Init) for USBD_Init
     usb_device.o(i.MX_USB_DEVICE_Init) refers to main.o(i.Error_Handler) for Error_Handler
     usb_device.o(i.MX_USB_DEVICE_Init) refers to usbd_core.o(i.USBD_RegisterClass) for USBD_RegisterClass
@@ -1361,6 +1360,7 @@ Removing Unused input sections from the image.
     Removing rgb.o(.rev16_text), (4 bytes).
     Removing rgb.o(.revsh_text), (4 bytes).
     Removing rgb.o(.rrx_text), (6 bytes).
+    Removing rgb.o(i.rgb_orange), (60 bytes).
     Removing usb_device.o(.rev16_text), (4 bytes).
     Removing usb_device.o(.revsh_text), (4 bytes).
     Removing usb_device.o(.rrx_text), (6 bytes).
@@ -1851,7 +1851,7 @@ Removing Unused input sections from the image.
     Removing usbd_customhid.o(.revsh_text), (4 bytes).
     Removing usbd_customhid.o(.rrx_text), (6 bytes).
 
-548 unused section(s) (total 53604 bytes) removed from the image.
+549 unused section(s) (total 53664 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1893,66 +1893,66 @@ Image Symbol Table
     ../USB_DEVICE/App/usbd_custom_hid_if.c   0x00000000   Number         0  usbd_custom_hid_if.o ABSOLUTE
     ../USB_DEVICE/App/usbd_desc.c            0x00000000   Number         0  usbd_desc.o ABSOLUTE
     ../USB_DEVICE/Target/usbd_conf.c         0x00000000   Number         0  usbd_conf.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/dczerorl2.s                0x00000000   Number         0  __dczerorl2.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0_sigfpe.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr_intlibspace.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0_sigfpe.o ABSOLUTE
-    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_ldiv0.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
     ../clib/fenv.c                           0x00000000   Number         0  _rserrno.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
     ../clib/longlong.s                       0x00000000   Number         0  lludivv7m.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_v6.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
     ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_ss.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  noretval__2snprintf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __2snprintf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_intcommon.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _sputc.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  _snputc.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_ss_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_char_common.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_ss.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_nopercent.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _printf_intcommon.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __2snprintf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_wp.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  noretval__2snprintf.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  _snputc.o ABSOLUTE
+    ../clib/printf.c                         0x00000000   Number         0  __printf_flags.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  _printf_dec.o ABSOLUTE
     ../clib/printf.c                         0x00000000   Number         0  __printf.o ABSOLUTE
-    ../clib/printf.c                         0x00000000   Number         0  __printf_flags_ss_wp.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent.o ABSOLUTE
-    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent_end.o ABSOLUTE
     ../clib/printf_percent.s                 0x00000000   Number         0  _printf_d.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent_end.o ABSOLUTE
+    ../clib/printf_percent.s                 0x00000000   Number         0  _printf_percent.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
@@ -2435,46 +2435,45 @@ Image Symbol Table
     i.rgb_green                              0x08017308   Section        0  rgb.o(i.rgb_green)
     i.rgb_init                               0x0801733c   Section        0  rgb.o(i.rgb_init)
     i.rgb_pulse                              0x08017344   Section        0  main.o(i.rgb_pulse)
-    i.rgb_red                                0x0801746c   Section        0  rgb.o(i.rgb_red)
-    i.rgb_violet                             0x080174a0   Section        0  rgb.o(i.rgb_violet)
-    i.rgb_wight                              0x080174d4   Section        0  rgb.o(i.rgb_wight)
-    i.rgb_yellow                             0x08017508   Section        0  rgb.o(i.rgb_yellow)
-    i.ssd1306_ClearBitmapArea                0x0801753c   Section        0  ssd1306.o(i.ssd1306_ClearBitmapArea)
-    i.ssd1306_DrawBitmap                     0x08017570   Section        0  ssd1306.o(i.ssd1306_DrawBitmap)
-    i.ssd1306_DrawPixel                      0x080175fc   Section        0  ssd1306.o(i.ssd1306_DrawPixel)
-    i.ssd1306_Fill                           0x08017688   Section        0  ssd1306.o(i.ssd1306_Fill)
-    i.ssd1306_FillArea                       0x080176a8   Section        0  ssd1306.o(i.ssd1306_FillArea)
-    i.ssd1306_Init                           0x080177a4   Section        0  ssd1306.o(i.ssd1306_Init)
-    i.ssd1306_Reset                          0x08017870   Section        0  ssd1306.o(i.ssd1306_Reset)
-    i.ssd1306_SetContrast                    0x08017872   Section        0  ssd1306.o(i.ssd1306_SetContrast)
-    i.ssd1306_SetCursor                      0x08017888   Section        0  ssd1306.o(i.ssd1306_SetCursor)
-    i.ssd1306_SetDisplayOn                   0x08017894   Section        0  ssd1306.o(i.ssd1306_SetDisplayOn)
-    i.ssd1306_UpdateScreen                   0x080178b8   Section        0  ssd1306.o(i.ssd1306_UpdateScreen)
-    i.ssd1306_WriteChar                      0x080178f0   Section        0  ssd1306.o(i.ssd1306_WriteChar)
-    i.ssd1306_WriteCommand                   0x080179ac   Section        0  ssd1306.o(i.ssd1306_WriteCommand)
-    i.ssd1306_WriteData                      0x080179d4   Section        0  ssd1306.o(i.ssd1306_WriteData)
-    i.ssd1306_WriteString                    0x080179f8   Section        0  ssd1306.o(i.ssd1306_WriteString)
-    i.stat_led                               0x08017a24   Section        0  led.o(i.stat_led)
-    i.state_print                            0x08017ab0   Section        0  oled.o(i.state_print)
-    i.string_scroll                          0x08017b14   Section        0  oled.o(i.string_scroll)
-    i.title_print                            0x08017b44   Section        0  oled.o(i.title_print)
-    i.volume_full                            0x08017b9c   Section        0  oled.o(i.volume_full)
-    i.volume_half                            0x08017bc4   Section        0  oled.o(i.volume_half)
-    i.volume_min                             0x08017bec   Section        0  oled.o(i.volume_min)
-    i.volume_mute                            0x08017c14   Section        0  oled.o(i.volume_mute)
-    i.volume_print                           0x08017c3c   Section        0  oled.o(i.volume_print)
-    i.volume_zero                            0x08017ccc   Section        0  oled.o(i.volume_zero)
-    i.ws2812_init                            0x08017cf4   Section        0  ws2812.o(i.ws2812_init)
-    i.ws2812_pixel_rgb_to_buf_dma            0x08017d0c   Section        0  ws2812.o(i.ws2812_pixel_rgb_to_buf_dma)
-    x$fpl$fpinit                             0x08017e18   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x08017e18   Number         0  fpinit.o(x$fpl$fpinit)
-    .constdata                               0x08017e22   Section     9055  ssd1306_fonts.o(.constdata)
-    Font11x18                                0x08017e22   Data        3420  ssd1306_fonts.o(.constdata)
-    Font16x17                                0x08018b7e   Data        5474  ssd1306_fonts.o(.constdata)
-    .constdata                               0x0801a181   Section     1151  oled.o(.constdata)
-    .constdata                               0x0801a600   Section        8  stm32f4xx_hal_dma.o(.constdata)
-    flagBitshiftOffset                       0x0801a600   Data           8  stm32f4xx_hal_dma.o(.constdata)
-    .constdata                               0x0801a608   Section       24  system_stm32f4xx.o(.constdata)
+    i.rgb_red                                0x08017468   Section        0  rgb.o(i.rgb_red)
+    i.rgb_violet                             0x0801749c   Section        0  rgb.o(i.rgb_violet)
+    i.rgb_wight                              0x080174d0   Section        0  rgb.o(i.rgb_wight)
+    i.ssd1306_ClearBitmapArea                0x08017504   Section        0  ssd1306.o(i.ssd1306_ClearBitmapArea)
+    i.ssd1306_DrawBitmap                     0x08017538   Section        0  ssd1306.o(i.ssd1306_DrawBitmap)
+    i.ssd1306_DrawPixel                      0x080175c4   Section        0  ssd1306.o(i.ssd1306_DrawPixel)
+    i.ssd1306_Fill                           0x08017650   Section        0  ssd1306.o(i.ssd1306_Fill)
+    i.ssd1306_FillArea                       0x08017670   Section        0  ssd1306.o(i.ssd1306_FillArea)
+    i.ssd1306_Init                           0x0801776c   Section        0  ssd1306.o(i.ssd1306_Init)
+    i.ssd1306_Reset                          0x08017838   Section        0  ssd1306.o(i.ssd1306_Reset)
+    i.ssd1306_SetContrast                    0x0801783a   Section        0  ssd1306.o(i.ssd1306_SetContrast)
+    i.ssd1306_SetCursor                      0x08017850   Section        0  ssd1306.o(i.ssd1306_SetCursor)
+    i.ssd1306_SetDisplayOn                   0x0801785c   Section        0  ssd1306.o(i.ssd1306_SetDisplayOn)
+    i.ssd1306_UpdateScreen                   0x08017880   Section        0  ssd1306.o(i.ssd1306_UpdateScreen)
+    i.ssd1306_WriteChar                      0x080178b8   Section        0  ssd1306.o(i.ssd1306_WriteChar)
+    i.ssd1306_WriteCommand                   0x08017974   Section        0  ssd1306.o(i.ssd1306_WriteCommand)
+    i.ssd1306_WriteData                      0x0801799c   Section        0  ssd1306.o(i.ssd1306_WriteData)
+    i.ssd1306_WriteString                    0x080179c0   Section        0  ssd1306.o(i.ssd1306_WriteString)
+    i.stat_led                               0x080179ec   Section        0  led.o(i.stat_led)
+    i.state_print                            0x08017a78   Section        0  oled.o(i.state_print)
+    i.string_scroll                          0x08017adc   Section        0  oled.o(i.string_scroll)
+    i.title_print                            0x08017b0c   Section        0  oled.o(i.title_print)
+    i.volume_full                            0x08017b64   Section        0  oled.o(i.volume_full)
+    i.volume_half                            0x08017b8c   Section        0  oled.o(i.volume_half)
+    i.volume_min                             0x08017bb4   Section        0  oled.o(i.volume_min)
+    i.volume_mute                            0x08017bdc   Section        0  oled.o(i.volume_mute)
+    i.volume_print                           0x08017c04   Section        0  oled.o(i.volume_print)
+    i.volume_zero                            0x08017c94   Section        0  oled.o(i.volume_zero)
+    i.ws2812_init                            0x08017cbc   Section        0  ws2812.o(i.ws2812_init)
+    i.ws2812_pixel_rgb_to_buf_dma            0x08017cd4   Section        0  ws2812.o(i.ws2812_pixel_rgb_to_buf_dma)
+    x$fpl$fpinit                             0x08017de0   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x08017de0   Number         0  fpinit.o(x$fpl$fpinit)
+    .constdata                               0x08017dea   Section     9055  ssd1306_fonts.o(.constdata)
+    Font11x18                                0x08017dea   Data        3420  ssd1306_fonts.o(.constdata)
+    Font16x17                                0x08018b46   Data        5474  ssd1306_fonts.o(.constdata)
+    .constdata                               0x0801a149   Section     1151  oled.o(.constdata)
+    .constdata                               0x0801a5c8   Section        8  stm32f4xx_hal_dma.o(.constdata)
+    flagBitshiftOffset                       0x0801a5c8   Data           8  stm32f4xx_hal_dma.o(.constdata)
+    .constdata                               0x0801a5d0   Section       24  system_stm32f4xx.o(.constdata)
     .data                                    0x20000000   Section       25  main.o(.data)
     .data                                    0x20000019   Section        2  stm32f4xx_it.o(.data)
     .data                                    0x2000001c   Section        6  ssd1306.o(.data)
@@ -2901,54 +2900,53 @@ Image Symbol Table
     rgb_cyan                                 0x080172d5   Thumb Code    44  rgb.o(i.rgb_cyan)
     rgb_green                                0x08017309   Thumb Code    44  rgb.o(i.rgb_green)
     rgb_init                                 0x0801733d   Thumb Code     8  rgb.o(i.rgb_init)
-    rgb_pulse                                0x08017345   Thumb Code   280  main.o(i.rgb_pulse)
-    rgb_red                                  0x0801746d   Thumb Code    44  rgb.o(i.rgb_red)
-    rgb_violet                               0x080174a1   Thumb Code    44  rgb.o(i.rgb_violet)
-    rgb_wight                                0x080174d5   Thumb Code    44  rgb.o(i.rgb_wight)
-    rgb_yellow                               0x08017509   Thumb Code    44  rgb.o(i.rgb_yellow)
-    ssd1306_ClearBitmapArea                  0x0801753d   Thumb Code    52  ssd1306.o(i.ssd1306_ClearBitmapArea)
-    ssd1306_DrawBitmap                       0x08017571   Thumb Code   138  ssd1306.o(i.ssd1306_DrawBitmap)
-    ssd1306_DrawPixel                        0x080175fd   Thumb Code   136  ssd1306.o(i.ssd1306_DrawPixel)
-    ssd1306_Fill                             0x08017689   Thumb Code    28  ssd1306.o(i.ssd1306_Fill)
-    ssd1306_FillArea                         0x080176a9   Thumb Code   248  ssd1306.o(i.ssd1306_FillArea)
-    ssd1306_Init                             0x080177a5   Thumb Code   198  ssd1306.o(i.ssd1306_Init)
-    ssd1306_Reset                            0x08017871   Thumb Code     2  ssd1306.o(i.ssd1306_Reset)
-    ssd1306_SetContrast                      0x08017873   Thumb Code    20  ssd1306.o(i.ssd1306_SetContrast)
-    ssd1306_SetCursor                        0x08017889   Thumb Code     8  ssd1306.o(i.ssd1306_SetCursor)
-    ssd1306_SetDisplayOn                     0x08017895   Thumb Code    32  ssd1306.o(i.ssd1306_SetDisplayOn)
-    ssd1306_UpdateScreen                     0x080178b9   Thumb Code    52  ssd1306.o(i.ssd1306_UpdateScreen)
-    ssd1306_WriteChar                        0x080178f1   Thumb Code   184  ssd1306.o(i.ssd1306_WriteChar)
-    ssd1306_WriteCommand                     0x080179ad   Thumb Code    34  ssd1306.o(i.ssd1306_WriteCommand)
-    ssd1306_WriteData                        0x080179d5   Thumb Code    32  ssd1306.o(i.ssd1306_WriteData)
-    ssd1306_WriteString                      0x080179f9   Thumb Code    44  ssd1306.o(i.ssd1306_WriteString)
-    stat_led                                 0x08017a25   Thumb Code   130  led.o(i.stat_led)
-    state_print                              0x08017ab1   Thumb Code    90  oled.o(i.state_print)
-    string_scroll                            0x08017b15   Thumb Code    42  oled.o(i.string_scroll)
-    title_print                              0x08017b45   Thumb Code    78  oled.o(i.title_print)
-    volume_full                              0x08017b9d   Thumb Code    36  oled.o(i.volume_full)
-    volume_half                              0x08017bc5   Thumb Code    36  oled.o(i.volume_half)
-    volume_min                               0x08017bed   Thumb Code    36  oled.o(i.volume_min)
-    volume_mute                              0x08017c15   Thumb Code    36  oled.o(i.volume_mute)
-    volume_print                             0x08017c3d   Thumb Code   132  oled.o(i.volume_print)
-    volume_zero                              0x08017ccd   Thumb Code    36  oled.o(i.volume_zero)
-    ws2812_init                              0x08017cf5   Thumb Code    20  ws2812.o(i.ws2812_init)
-    ws2812_pixel_rgb_to_buf_dma              0x08017d0d   Thumb Code   264  ws2812.o(i.ws2812_pixel_rgb_to_buf_dma)
-    _fp_init                                 0x08017e19   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x08017e21   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x08017e21   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    char_width                               0x0801a0e0   Data         161  ssd1306_fonts.o(.constdata)
-    full                                     0x0801a181   Data         100  oled.o(.constdata)
-    play                                     0x0801a1e5   Data         100  oled.o(.constdata)
-    puse                                     0x0801a249   Data          75  oled.o(.constdata)
-    logo                                     0x0801a294   Data         576  oled.o(.constdata)
-    half                                     0x0801a4d4   Data          75  oled.o(.constdata)
-    min                                      0x0801a51f   Data          75  oled.o(.constdata)
-    zero                                     0x0801a56a   Data          50  oled.o(.constdata)
-    mute                                     0x0801a59c   Data         100  oled.o(.constdata)
-    AHBPrescTable                            0x0801a608   Data          16  system_stm32f4xx.o(.constdata)
-    APBPrescTable                            0x0801a618   Data           8  system_stm32f4xx.o(.constdata)
-    Region$$Table$$Base                      0x0801a620   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0801a640   Number         0  anon$$obj.o(Region$$Table)
+    rgb_pulse                                0x08017345   Thumb Code   276  main.o(i.rgb_pulse)
+    rgb_red                                  0x08017469   Thumb Code    44  rgb.o(i.rgb_red)
+    rgb_violet                               0x0801749d   Thumb Code    44  rgb.o(i.rgb_violet)
+    rgb_wight                                0x080174d1   Thumb Code    44  rgb.o(i.rgb_wight)
+    ssd1306_ClearBitmapArea                  0x08017505   Thumb Code    52  ssd1306.o(i.ssd1306_ClearBitmapArea)
+    ssd1306_DrawBitmap                       0x08017539   Thumb Code   138  ssd1306.o(i.ssd1306_DrawBitmap)
+    ssd1306_DrawPixel                        0x080175c5   Thumb Code   136  ssd1306.o(i.ssd1306_DrawPixel)
+    ssd1306_Fill                             0x08017651   Thumb Code    28  ssd1306.o(i.ssd1306_Fill)
+    ssd1306_FillArea                         0x08017671   Thumb Code   248  ssd1306.o(i.ssd1306_FillArea)
+    ssd1306_Init                             0x0801776d   Thumb Code   198  ssd1306.o(i.ssd1306_Init)
+    ssd1306_Reset                            0x08017839   Thumb Code     2  ssd1306.o(i.ssd1306_Reset)
+    ssd1306_SetContrast                      0x0801783b   Thumb Code    20  ssd1306.o(i.ssd1306_SetContrast)
+    ssd1306_SetCursor                        0x08017851   Thumb Code     8  ssd1306.o(i.ssd1306_SetCursor)
+    ssd1306_SetDisplayOn                     0x0801785d   Thumb Code    32  ssd1306.o(i.ssd1306_SetDisplayOn)
+    ssd1306_UpdateScreen                     0x08017881   Thumb Code    52  ssd1306.o(i.ssd1306_UpdateScreen)
+    ssd1306_WriteChar                        0x080178b9   Thumb Code   184  ssd1306.o(i.ssd1306_WriteChar)
+    ssd1306_WriteCommand                     0x08017975   Thumb Code    34  ssd1306.o(i.ssd1306_WriteCommand)
+    ssd1306_WriteData                        0x0801799d   Thumb Code    32  ssd1306.o(i.ssd1306_WriteData)
+    ssd1306_WriteString                      0x080179c1   Thumb Code    44  ssd1306.o(i.ssd1306_WriteString)
+    stat_led                                 0x080179ed   Thumb Code   130  led.o(i.stat_led)
+    state_print                              0x08017a79   Thumb Code    90  oled.o(i.state_print)
+    string_scroll                            0x08017add   Thumb Code    42  oled.o(i.string_scroll)
+    title_print                              0x08017b0d   Thumb Code    78  oled.o(i.title_print)
+    volume_full                              0x08017b65   Thumb Code    36  oled.o(i.volume_full)
+    volume_half                              0x08017b8d   Thumb Code    36  oled.o(i.volume_half)
+    volume_min                               0x08017bb5   Thumb Code    36  oled.o(i.volume_min)
+    volume_mute                              0x08017bdd   Thumb Code    36  oled.o(i.volume_mute)
+    volume_print                             0x08017c05   Thumb Code   132  oled.o(i.volume_print)
+    volume_zero                              0x08017c95   Thumb Code    36  oled.o(i.volume_zero)
+    ws2812_init                              0x08017cbd   Thumb Code    20  ws2812.o(i.ws2812_init)
+    ws2812_pixel_rgb_to_buf_dma              0x08017cd5   Thumb Code   264  ws2812.o(i.ws2812_pixel_rgb_to_buf_dma)
+    _fp_init                                 0x08017de1   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x08017de9   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x08017de9   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    char_width                               0x0801a0a8   Data         161  ssd1306_fonts.o(.constdata)
+    full                                     0x0801a149   Data         100  oled.o(.constdata)
+    play                                     0x0801a1ad   Data         100  oled.o(.constdata)
+    puse                                     0x0801a211   Data          75  oled.o(.constdata)
+    logo                                     0x0801a25c   Data         576  oled.o(.constdata)
+    half                                     0x0801a49c   Data          75  oled.o(.constdata)
+    min                                      0x0801a4e7   Data          75  oled.o(.constdata)
+    zero                                     0x0801a532   Data          50  oled.o(.constdata)
+    mute                                     0x0801a564   Data         100  oled.o(.constdata)
+    AHBPrescTable                            0x0801a5d0   Data          16  system_stm32f4xx.o(.constdata)
+    APBPrescTable                            0x0801a5e0   Data           8  system_stm32f4xx.o(.constdata)
+    Region$$Table$$Base                      0x0801a5e8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0801a608   Number         0  anon$$obj.o(Region$$Table)
     direction                                0x20000000   Data           1  main.o(.data)
     winampKey                                0x20000001   Data           1  main.o(.data)
     count                                    0x20000002   Data           1  main.o(.data)
@@ -3004,9 +3002,9 @@ Memory Map of the image
 
   Image Entry point : 0x08010195
 
-  Load Region LR_IROM1 (Base: 0x08010000, Size: 0x0000a7f4, Max: 0x00030000, ABSOLUTE, COMPRESSED[0x0000a770])
+  Load Region LR_IROM1 (Base: 0x08010000, Size: 0x0000a7bc, Max: 0x00030000, ABSOLUTE, COMPRESSED[0x0000a738])
 
-    Execution Region ER_IROM1 (Exec base: 0x08010000, Load base: 0x08010000, Size: 0x0000a640, Max: 0x00030000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08010000, Load base: 0x08010000, Size: 0x0000a608, Max: 0x00030000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3360,49 +3358,48 @@ Memory Map of the image
     0x080172d4   0x080172d4   0x00000034   Code   RO         1070    i.rgb_cyan          rgb.o
     0x08017308   0x08017308   0x00000034   Code   RO         1071    i.rgb_green         rgb.o
     0x0801733c   0x0801733c   0x00000008   Code   RO         1072    i.rgb_init          rgb.o
-    0x08017344   0x08017344   0x00000128   Code   RO           19    i.rgb_pulse         main.o
-    0x0801746c   0x0801746c   0x00000034   Code   RO         1073    i.rgb_red           rgb.o
-    0x080174a0   0x080174a0   0x00000034   Code   RO         1074    i.rgb_violet        rgb.o
-    0x080174d4   0x080174d4   0x00000034   Code   RO         1075    i.rgb_wight         rgb.o
-    0x08017508   0x08017508   0x00000034   Code   RO         1076    i.rgb_yellow        rgb.o
-    0x0801753c   0x0801753c   0x00000034   Code   RO          457    i.ssd1306_ClearBitmapArea  ssd1306.o
-    0x08017570   0x08017570   0x0000008a   Code   RO          461    i.ssd1306_DrawBitmap  ssd1306.o
-    0x080175fa   0x080175fa   0x00000002   PAD
-    0x080175fc   0x080175fc   0x0000008c   Code   RO          463    i.ssd1306_DrawPixel  ssd1306.o
-    0x08017688   0x08017688   0x00000020   Code   RO          465    i.ssd1306_Fill      ssd1306.o
-    0x080176a8   0x080176a8   0x000000fc   Code   RO          466    i.ssd1306_FillArea  ssd1306.o
-    0x080177a4   0x080177a4   0x000000cc   Code   RO          471    i.ssd1306_Init      ssd1306.o
-    0x08017870   0x08017870   0x00000002   Code   RO          475    i.ssd1306_Reset     ssd1306.o
-    0x08017872   0x08017872   0x00000014   Code   RO          476    i.ssd1306_SetContrast  ssd1306.o
-    0x08017886   0x08017886   0x00000002   PAD
-    0x08017888   0x08017888   0x0000000c   Code   RO          477    i.ssd1306_SetCursor  ssd1306.o
-    0x08017894   0x08017894   0x00000024   Code   RO          478    i.ssd1306_SetDisplayOn  ssd1306.o
-    0x080178b8   0x080178b8   0x00000038   Code   RO          479    i.ssd1306_UpdateScreen  ssd1306.o
-    0x080178f0   0x080178f0   0x000000bc   Code   RO          480    i.ssd1306_WriteChar  ssd1306.o
-    0x080179ac   0x080179ac   0x00000028   Code   RO          481    i.ssd1306_WriteCommand  ssd1306.o
-    0x080179d4   0x080179d4   0x00000024   Code   RO          482    i.ssd1306_WriteData  ssd1306.o
-    0x080179f8   0x080179f8   0x0000002c   Code   RO          483    i.ssd1306_WriteString  ssd1306.o
-    0x08017a24   0x08017a24   0x0000008c   Code   RO          883    i.stat_led          led.o
-    0x08017ab0   0x08017ab0   0x00000064   Code   RO          968    i.state_print       oled.o
-    0x08017b14   0x08017b14   0x00000030   Code   RO          969    i.string_scroll     oled.o
-    0x08017b44   0x08017b44   0x00000058   Code   RO          970    i.title_print       oled.o
-    0x08017b9c   0x08017b9c   0x00000028   Code   RO          971    i.volume_full       oled.o
-    0x08017bc4   0x08017bc4   0x00000028   Code   RO          972    i.volume_half       oled.o
-    0x08017bec   0x08017bec   0x00000028   Code   RO          973    i.volume_min        oled.o
-    0x08017c14   0x08017c14   0x00000028   Code   RO          974    i.volume_mute       oled.o
-    0x08017c3c   0x08017c3c   0x00000090   Code   RO          975    i.volume_print      oled.o
-    0x08017ccc   0x08017ccc   0x00000028   Code   RO          976    i.volume_zero       oled.o
-    0x08017cf4   0x08017cf4   0x00000018   Code   RO          846    i.ws2812_init       ws2812.o
-    0x08017d0c   0x08017d0c   0x0000010c   Code   RO          847    i.ws2812_pixel_rgb_to_buf_dma  ws2812.o
-    0x08017e18   0x08017e18   0x0000000a   Code   RO         5563    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x08017e22   0x08017e22   0x0000235f   Data   RO          686    .constdata          ssd1306_fonts.o
-    0x0801a181   0x0801a181   0x0000047f   Data   RO          977    .constdata          oled.o
-    0x0801a600   0x0801a600   0x00000008   Data   RO         2671    .constdata          stm32f4xx_hal_dma.o
-    0x0801a608   0x0801a608   0x00000018   Data   RO         4846    .constdata          system_stm32f4xx.o
-    0x0801a620   0x0801a620   0x00000020   Data   RO         5621    Region$$Table       anon$$obj.o
+    0x08017344   0x08017344   0x00000124   Code   RO           19    i.rgb_pulse         main.o
+    0x08017468   0x08017468   0x00000034   Code   RO         1074    i.rgb_red           rgb.o
+    0x0801749c   0x0801749c   0x00000034   Code   RO         1075    i.rgb_violet        rgb.o
+    0x080174d0   0x080174d0   0x00000034   Code   RO         1076    i.rgb_wight         rgb.o
+    0x08017504   0x08017504   0x00000034   Code   RO          457    i.ssd1306_ClearBitmapArea  ssd1306.o
+    0x08017538   0x08017538   0x0000008a   Code   RO          461    i.ssd1306_DrawBitmap  ssd1306.o
+    0x080175c2   0x080175c2   0x00000002   PAD
+    0x080175c4   0x080175c4   0x0000008c   Code   RO          463    i.ssd1306_DrawPixel  ssd1306.o
+    0x08017650   0x08017650   0x00000020   Code   RO          465    i.ssd1306_Fill      ssd1306.o
+    0x08017670   0x08017670   0x000000fc   Code   RO          466    i.ssd1306_FillArea  ssd1306.o
+    0x0801776c   0x0801776c   0x000000cc   Code   RO          471    i.ssd1306_Init      ssd1306.o
+    0x08017838   0x08017838   0x00000002   Code   RO          475    i.ssd1306_Reset     ssd1306.o
+    0x0801783a   0x0801783a   0x00000014   Code   RO          476    i.ssd1306_SetContrast  ssd1306.o
+    0x0801784e   0x0801784e   0x00000002   PAD
+    0x08017850   0x08017850   0x0000000c   Code   RO          477    i.ssd1306_SetCursor  ssd1306.o
+    0x0801785c   0x0801785c   0x00000024   Code   RO          478    i.ssd1306_SetDisplayOn  ssd1306.o
+    0x08017880   0x08017880   0x00000038   Code   RO          479    i.ssd1306_UpdateScreen  ssd1306.o
+    0x080178b8   0x080178b8   0x000000bc   Code   RO          480    i.ssd1306_WriteChar  ssd1306.o
+    0x08017974   0x08017974   0x00000028   Code   RO          481    i.ssd1306_WriteCommand  ssd1306.o
+    0x0801799c   0x0801799c   0x00000024   Code   RO          482    i.ssd1306_WriteData  ssd1306.o
+    0x080179c0   0x080179c0   0x0000002c   Code   RO          483    i.ssd1306_WriteString  ssd1306.o
+    0x080179ec   0x080179ec   0x0000008c   Code   RO          883    i.stat_led          led.o
+    0x08017a78   0x08017a78   0x00000064   Code   RO          968    i.state_print       oled.o
+    0x08017adc   0x08017adc   0x00000030   Code   RO          969    i.string_scroll     oled.o
+    0x08017b0c   0x08017b0c   0x00000058   Code   RO          970    i.title_print       oled.o
+    0x08017b64   0x08017b64   0x00000028   Code   RO          971    i.volume_full       oled.o
+    0x08017b8c   0x08017b8c   0x00000028   Code   RO          972    i.volume_half       oled.o
+    0x08017bb4   0x08017bb4   0x00000028   Code   RO          973    i.volume_min        oled.o
+    0x08017bdc   0x08017bdc   0x00000028   Code   RO          974    i.volume_mute       oled.o
+    0x08017c04   0x08017c04   0x00000090   Code   RO          975    i.volume_print      oled.o
+    0x08017c94   0x08017c94   0x00000028   Code   RO          976    i.volume_zero       oled.o
+    0x08017cbc   0x08017cbc   0x00000018   Code   RO          846    i.ws2812_init       ws2812.o
+    0x08017cd4   0x08017cd4   0x0000010c   Code   RO          847    i.ws2812_pixel_rgb_to_buf_dma  ws2812.o
+    0x08017de0   0x08017de0   0x0000000a   Code   RO         5563    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x08017dea   0x08017dea   0x0000235f   Data   RO          686    .constdata          ssd1306_fonts.o
+    0x0801a149   0x0801a149   0x0000047f   Data   RO          977    .constdata          oled.o
+    0x0801a5c8   0x0801a5c8   0x00000008   Data   RO         2671    .constdata          stm32f4xx_hal_dma.o
+    0x0801a5d0   0x0801a5d0   0x00000018   Data   RO         4846    .constdata          system_stm32f4xx.o
+    0x0801a5e8   0x0801a5e8   0x00000020   Data   RO         5621    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0801a640, Size: 0x000019d8, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x00000130])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0801a608, Size: 0x000019d8, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x00000130])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3444,45 +3441,45 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        60          4          0          0          0       1786   dma.o
-       328         20          0          0          0       1487   encoder.o
-       464         18          0          0          0       1103   gpio.o
-        56          8          0          0          0        803   i2c.o
-       112          0          0          0          0       2702   keyboard.o
-       200         16          0          0          0       1960   led.o
-      1310        104          0         25        192     437832   main.o
-       648         62       1151          1          0       7269   oled.o
-       372         56          0          0          0       4821   rgb.o
-      1472         48          0          6       1024      13681   ssd1306.o
-         0          0       9055         16          0       1059   ssd1306_fonts.o
-        64         26        404          0       1536        856   startup_stm32f401xc.o
-       212         36          0          9          0       9201   stm32f4xx_hal.o
-       304         22          0          0          0      34407   stm32f4xx_hal_cortex.o
-      1272         16          8          0          0       6741   stm32f4xx_hal_dma.o
-       496         36          0          0          0       2695   stm32f4xx_hal_gpio.o
-      1620         30          0          0          0       8187   stm32f4xx_hal_i2c.o
-       376         24          0          0          0       1752   stm32f4xx_hal_msp.o
-      3582         16          0          0          0      13072   stm32f4xx_hal_pcd.o
-        90          0          0          0          0       2405   stm32f4xx_hal_pcd_ex.o
-      1788         74          0          0          0       4997   stm32f4xx_hal_rcc.o
-      3064        108          0          0          0      19958   stm32f4xx_hal_tim.o
-       160         22          0          0          0       2461   stm32f4xx_hal_tim_ex.o
-       302         26          0          2          0       9976   stm32f4xx_it.o
-      4246         98          0          0          0      23455   stm32f4xx_ll_usb.o
-        20          6         24          4          0       1111   system_stm32f4xx.o
-       628         60          0          0        240       3610   tim.o
-        76         16          0          0        732       2398   usb_device.o
-       974         24          0          0       1416      16796   usbd_conf.o
-      1346          0          0          0          0      16389   usbd_core.o
-      2342         30          0          1          0      17736   usbd_ctlreq.o
-       320         48          0        156        100       2998   usbd_custom_hid_if.o
-      1394         60          0        124          0      12639   usbd_customhid.o
-       378        114          0         78        512       6809   usbd_desc.o
-       174          0          0          0          0       4668   usbd_ioreq.o
-       292          8          0          0        328       1771   ws2812.o
+        60          4          0          0          0       1834   dma.o
+       328         20          0          0          0       1523   encoder.o
+       464         18          0          0          0       1127   gpio.o
+        56          8          0          0          0        827   i2c.o
+       112          0          0          0          0       2762   keyboard.o
+       200         16          0          0          0       2008   led.o
+      1306        104          0         25        192     438132   main.o
+       648         62       1151          1          0       7437   oled.o
+       320         48          0          0          0       4340   rgb.o
+      1472         48          0          6       1024      13933   ssd1306.o
+         0          0       9055         16          0       1095   ssd1306_fonts.o
+        64         26        404          0       1536        848   startup_stm32f401xc.o
+       212         36          0          9          0       9297   stm32f4xx_hal.o
+       304         22          0          0          0      34491   stm32f4xx_hal_cortex.o
+      1272         16          8          0          0       6849   stm32f4xx_hal_dma.o
+       496         36          0          0          0       2743   stm32f4xx_hal_gpio.o
+      1620         30          0          0          0       8295   stm32f4xx_hal_i2c.o
+       376         24          0          0          0       1788   stm32f4xx_hal_msp.o
+      3582         16          0          0          0      13252   stm32f4xx_hal_pcd.o
+        90          0          0          0          0       2453   stm32f4xx_hal_pcd_ex.o
+      1788         74          0          0          0       5069   stm32f4xx_hal_rcc.o
+      3064        108          0          0          0      20294   stm32f4xx_hal_tim.o
+       160         22          0          0          0       2509   stm32f4xx_hal_tim_ex.o
+       302         26          0          2          0      10228   stm32f4xx_it.o
+      4246         98          0          0          0      23839   stm32f4xx_ll_usb.o
+        20          6         24          4          0       1147   system_stm32f4xx.o
+       628         60          0          0        240       3694   tim.o
+        76         16          0          0        732       2434   usb_device.o
+       974         24          0          0       1416      17120   usbd_conf.o
+      1346          0          0          0          0      16665   usbd_core.o
+      2342         30          0          1          0      17940   usbd_ctlreq.o
+       320         48          0        156        100       3058   usbd_custom_hid_if.o
+      1394         60          0        124          0      12831   usbd_customhid.o
+       378        114          0         78        512       6941   usbd_desc.o
+       174          0          0          0          0       4752   usbd_ioreq.o
+       292          8          0          0        328       1819   ws2812.o
 
     ----------------------------------------------------------------------
-     30574       1236      10674        436       6080     701591   Object Totals
+     30518       1228      10674        436       6080     705374   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         32          0          0         14          0          0   (incl. Padding)
 
@@ -3546,15 +3543,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     31886       1278      10674        436       6180     673555   Grand Totals
-     31886       1278      10674        304       6180     673555   ELF Image Totals (compressed)
-     31886       1278      10674        304          0          0   ROM Totals
+     31830       1270      10674        436       6180     677438   Grand Totals
+     31830       1270      10674        304       6180     677438   ELF Image Totals (compressed)
+     31830       1270      10674        304          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                42560 (  41.56kB)
+    Total RO  Size (Code + RO Data)                42504 (  41.51kB)
     Total RW  Size (RW Data + ZI Data)              6616 (   6.46kB)
-    Total ROM Size (Code + RO Data + RW Data)      42864 (  41.86kB)
+    Total ROM Size (Code + RO Data + RW Data)      42808 (  41.80kB)
 
 ==============================================================================
 

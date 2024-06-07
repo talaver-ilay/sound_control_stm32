@@ -297,19 +297,19 @@ void rgb_pulse(void){
 			else if(!count) rgb_way = false;
 			
 			if(count_color<64) 														  rgb_red(&count);
-			else if(count_color > 64 && count_color <=128)  rgb_green(&count);
-			else if(count_color > 128 && count_color <=192) rgb_blue(&count);
-			else if(count_color > 192 && count_color <=256) rgb_wight(&count);
-			else if(count_color > 256 && count_color <=320) rgb_yellow(&count);
-			else if(count_color > 320 && count_color <=384) rgb_violet(&count);
-			else if(count_color > 384 && count_color <=448) rgb_cyan(&count);
-			
+			else if(count_color > 63 && count_color <=127)  rgb_violet(&count);
+			else if(count_color > 127 && count_color <=191) rgb_blue(&count);
+			else if(count_color > 191 && count_color <=255) rgb_cyan(&count);
+			else if(count_color > 255 && count_color <=319) rgb_green(&count);
+			else if(count_color > 319 && count_color <=383) rgb_cyan(&count);
+			else if(count_color > 383 && count_color <=447) rgb_wight(&count);
+//		rgb_orange(&count);
 		
 			if(!rgb_way)    count+=4; 
 			else if(rgb_way)count-=4;
 		
 			count_color++;
-			if(count_color > 448) count_color = 0; 
+			if(count_color > 447) count_color = 0; 
 			time9_flag = false;
 		}
 }
