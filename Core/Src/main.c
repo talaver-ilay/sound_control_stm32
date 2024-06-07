@@ -72,7 +72,7 @@ extern bool connect_flag;
 extern bool connect_state ;
 	
 media_info win_media = {0};
-uint8_t count = 0;
+uint8_t count = 4;
 uint16_t count_color = 0;
 bool rgb_way = false;
 
@@ -292,22 +292,24 @@ void oled_print(void){
 }
 ///////////////////////////////////////////////////////////////////////////////////
 void rgb_pulse(void){
-	if(time9_flag){
-			count_color++;
-			if(count==128)  rgb_way = true;
+	if(time9_flag){	
+			if(count == 128)  rgb_way = true;
 			else if(!count) rgb_way = false;
 			
-			if(!rgb_way)    count+=4; 
-			else if(rgb_way)count-=4;
-			
-			if(count_color<=64) 														rgb_red(&count);
+			if(count_color<64) 														  rgb_red(&count);
 			else if(count_color > 64 && count_color <=128)  rgb_green(&count);
 			else if(count_color > 128 && count_color <=192) rgb_blue(&count);
 			else if(count_color > 192 && count_color <=256) rgb_wight(&count);
 			else if(count_color > 256 && count_color <=320) rgb_yellow(&count);
 			else if(count_color > 320 && count_color <=384) rgb_violet(&count);
 			else if(count_color > 384 && count_color <=448) rgb_cyan(&count);
-			else count_color = 0;
+			
+		
+			if(!rgb_way)    count+=4; 
+			else if(rgb_way)count-=4;
+		
+			count_color++;
+			if(count_color > 448) count_color = 0; 
 			time9_flag = false;
 		}
 }

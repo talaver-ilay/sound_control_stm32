@@ -64,9 +64,11 @@ extern TIM_HandleTypeDef htim9;
 extern PCD_HandleTypeDef hpcd_USB_OTG_FS;
 extern uint8_t KeyState;
 extern DMA_HandleTypeDef hdma_tim4_ch3;
-bool time9_flag = false;
+//bool time9_flag = false;
 extern uint16_t BUF_DMA [ARRAY_LEN];
 bool connect_usb = false;
+
+bool time9_flag = false;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -354,7 +356,6 @@ void TIM1_BRK_TIM9_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM1_BRK_TIM9_IRQn 0 */
 	time9_flag = true;
-	
   /* USER CODE END TIM1_BRK_TIM9_IRQn 0 */
   HAL_TIM_IRQHandler(&htim9);
   /* USER CODE BEGIN TIM1_BRK_TIM9_IRQn 1 */
