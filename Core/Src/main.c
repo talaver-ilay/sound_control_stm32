@@ -149,15 +149,15 @@ int main(void)
 		encoder(TIM3->CNT/2,&oldEncoderValue_3,3,TIM3->CR1,win_media.Name,&keyboardhid);
 		press_key(&KeyState,win_media.Name,&keyboardhid);
 		rgb_pulse();
-		if(connect_state){
+		//if(connect_state){
 			oled_print();
 			stat_led(&win_media.state);
 			mute_led(&win_media.mute);
-		}else if(!connect_state && connect_flag){
+		//}else if(!connect_state && connect_flag){
 			full_led();
 			clean_oled();
-			connect_flag = false;
-		}
+			//connect_flag = false;
+		//}
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
   }		
