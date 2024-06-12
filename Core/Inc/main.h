@@ -55,8 +55,7 @@ extern "C" {
 #define MUTE 0x20
 #define INCREMENT 0x40
 #define DECREMENT 0x80
-#define key_DownArrow  0x51
-#define key_UpArrow 	 0x52
+
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
