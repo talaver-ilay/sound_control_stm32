@@ -57,8 +57,8 @@ bool title_flag = false;
 bool volume_flag = false;
 bool state_flag = false;
 bool prog_name_flag = false;
-bool connect_flag = false;
 bool connect_state = false;
+bool connect_flag = false;
 /* USER CODE END PRIVATE_TYPES */
 
 /**
@@ -267,41 +267,25 @@ static int8_t CUSTOM_HID_OutEvent_FS(uint8_t event_idx, uint8_t state)
 							 volume_packet = getpacket[2]; 
 		break; // громкость
 		case 0x02: state_flag = true;                                     // состояние воспроизведения
-			switch (getpacket[2]){
-				case sPLAY:win_media.state = sPLAY;
-				break;										
-				case sPAUSE:win_media.state = sPAUSE;
-				break;
-			  case sSTOP:win_media.state = sSTOP;
-				break;
-			}
+			switch (getpacket[2]){case sPLAY:win_media.state = sPLAY;break;																		
+														case sPAUSE:win_media.state = sPAUSE;break;				
+														case sSTOP:win_media.state = sSTOP;break;}				
 		break;
 		case 0x03:	title_flag = true;
 		break;													 // название песни 
-		case 0x04:  
-			prog_name_flag = true;																		 // нзвание плеера
-			switch(getpacket[2]){
-				case 0x00:win_media.Name = pSystem;break;
-				case 0x01:win_media.Name = pWinamp;break;
-				case 0x02:win_media.Name = pAimp;break;
-			}
+		case 0x04:  prog_name_flag = true;																		 // нзвание плеера
+								switch(getpacket[2]){case 0x00:win_media.Name = pSystem;break;
+																		 case 0x01:win_media.Name = pWinamp;break;
+																		 case 0x02:win_media.Name = pAimp;break;}
 		break;
 		case 0x05: volume_flag = true;
-			switch (getpacket[2]){
-				case 0x01:win_media.mute = sMUTE;
-				break;
-				case 0x00:win_media.mute = sUNMUTE;
-				break;}
+							 switch (getpacket[2]){case 0x01:win_media.mute = sMUTE;break;
+																		 case 0x00:win_media.mute = sUNMUTE;break;}		
 		break;
-		case 0x06: connect_flag = true;
-				switch (getpacket[2]){
-					case 0x00: connect_state = false;
-					break;
-					case 0x01: connect_state = true;
-					break;
-				}
-		 break;
-			
+		case 0x06:connect_flag = true;
+				switch (getpacket[2]){case 0x00: connect_state = false;break;
+															case 0x01: connect_state = true;break;}
+		break;
 	}	
   return (USBD_OK);
   /* USER CODE END 6 */

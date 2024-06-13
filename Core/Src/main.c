@@ -68,8 +68,8 @@ extern bool time9_flag;
 extern const uint8_t char_width[];
 extern TIM_HandleTypeDef htim9;
 extern uint8_t getpacket[USBD_CUSTOMHID_OUTREPORT_BUF_SIZE];
+extern bool connect_state;
 extern bool connect_flag;
-extern bool connect_state ;
 	
 media_info win_media = {0};
 uint8_t count = 4;
@@ -91,7 +91,7 @@ void SystemClock_Config(void);
 void encoder(uint16_t newEncoderValue, uint16_t* oldEncoderValue, uint8_t num, uint32_t CR,progName Name,keyboardHID* key);
 void press_key(uint8_t* Key,progName Name,keyboardHID* key);
 void oled_print(void);
-
+void program_connect(void);
 void rgb_pulse(void);
 /* USER CODE END PFP */
 
@@ -149,15 +149,7 @@ int main(void)
 		encoder(TIM3->CNT/2,&oldEncoderValue_3,3,TIM3->CR1,win_media.Name,&keyboardhid);
 		press_key(&KeyState,win_media.Name,&keyboardhid);
 		rgb_pulse();
-		//if(connect_state){
-			oled_print();
-			stat_led(&win_media.state);
-			mute_led(&win_media.mute);
-		//}else if(!connect_state && connect_flag){
-//			full_led();
-//			clean_oled();
-		//	connect_flag = false;
-		//}
+		program_connect();
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
   }		
@@ -311,6 +303,19 @@ void rgb_pulse(void){
 			count_color++;
 			if(count_color > 447) count_color = 0; 
 			time9_flag = false;
+		}
+}
+///////////////////////////////////////////////////////////////////////////////////
+void program_connect(void){
+		if(connect_state){
+			oled_print();
+			stat_led(&win_media.state);
+			mute_led(&win_media.mute);
+		}else if(!connect_state && connect_flag){
+			full_led();
+			clean_oled();
+			logo_print();
+			connect_flag = false;
 		}
 }
 ///////////////////////////////////////////////////////////////////////////////////
