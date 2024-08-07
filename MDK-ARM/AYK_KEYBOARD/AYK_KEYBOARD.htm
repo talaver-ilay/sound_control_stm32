@@ -3,7 +3,7 @@
 <title>Static Call Graph - [AYK_KEYBOARD\AYK_KEYBOARD.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image AYK_KEYBOARD\AYK_KEYBOARD.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Jun 10 12:25:32 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Aug 07 16:27:00 2024
 <BR><P>
 <H3>Maximum Stack Usage =        284 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -123,8 +123,8 @@ Function Pointers
 Global Symbols
 </H3>
 <P><STRONG><a name="[60]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
-<BR><BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<BR><BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
 <P><STRONG><a name="[61]"></a>__scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter))
@@ -649,9 +649,9 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>HAL_DMA_Init</STRONG> (Thumb, 232 bytes, Stack size 24 bytes, stm32f4xx_hal_dma.o(i.HAL_DMA_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_DMA_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CheckFifoParam
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CheckFifoParam
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcBaseAndBitshift
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 </UL>
@@ -795,8 +795,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_MspInit
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 
 <P><STRONG><a name="[99]"></a>HAL_NVIC_SetPriorityGrouping</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping))
@@ -1761,8 +1761,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_EP_Receive
 <LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_Get_USB_Status
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CUSTOM_HID_ReceivePacket
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_DataInStage
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_DataInStage
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CUSTOM_HID_ReceivePacket
 <LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CUSTOM_HID_Init
 <LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlPrepareRx
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlReceiveStatus
@@ -2113,8 +2113,8 @@ Global Symbols
 <P><STRONG><a name="[14f]"></a>clean_oled</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, oled.o(i.clean_oled))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = clean_oled &rArr; ssd1306_UpdateScreen &rArr; ssd1306_WriteData &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_Fill
-<LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_UpdateScreen
+<BR>[Calls]<UL><LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_UpdateScreen
+<LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_Fill
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;program_connect
 </UL>
@@ -2160,10 +2160,10 @@ Global Symbols
 <P><STRONG><a name="[155]"></a>logo_print</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, oled.o(i.logo_print))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = logo_print &rArr; ssd1306_UpdateScreen &rArr; ssd1306_WriteData &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_DrawBitmap
-<LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_ClearBitmapArea
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_UpdateScreen
+<LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_DrawBitmap
+<LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_ClearBitmapArea
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;program_connect
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -2363,9 +2363,9 @@ Global Symbols
 <P><STRONG><a name="[114]"></a>ssd1306_DrawPixel</STRONG> (Thumb, 136 bytes, Stack size 20 bytes, ssd1306.o(i.ssd1306_DrawPixel))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = ssd1306_DrawPixel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_DrawBitmap
+<BR>[Called By]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_WriteChar
+<LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_DrawBitmap
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;My_ssd1306_WriteChar
-<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_WriteChar
 </UL>
 
 <P><STRONG><a name="[150]"></a>ssd1306_Fill</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, ssd1306.o(i.ssd1306_Fill))
@@ -2382,13 +2382,13 @@ Global Symbols
 <P><STRONG><a name="[15f]"></a>ssd1306_Init</STRONG> (Thumb, 198 bytes, Stack size 8 bytes, ssd1306.o(i.ssd1306_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = ssd1306_Init &rArr; ssd1306_SetDisplayOn &rArr; ssd1306_WriteCommand &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_Fill
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_WriteCommand
 <LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_UpdateScreen
 <LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_SetDisplayOn
 <LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_SetContrast
 <LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_Reset
+<LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_Fill
 </UL>
 <BR>[Called By]<UL><LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_init
 </UL>
@@ -2489,10 +2489,10 @@ Global Symbols
 <P><STRONG><a name="[163]"></a>title_print</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, oled.o(i.title_print))
 <BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = title_print &rArr; My_ssd1306_WriteString &rArr; My_ssd1306_WriteChar &rArr; ssd1306_DrawPixel
 </UL>
-<BR>[Calls]<UL><LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_ClearBitmapArea
-<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;My_ssd1306_WriteString
-<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;string_scroll
+<BR>[Calls]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;string_scroll
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_SetCursor
+<LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_ClearBitmapArea
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;My_ssd1306_WriteString
 </UL>
 <BR>[Called By]<UL><LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_print
 </UL>
@@ -2537,14 +2537,14 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
 <LI>Call Chain = volume_print &rArr; __2snprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_ClearBitmapArea
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;volume_zero
+<BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;volume_zero
 <LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;volume_mute
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;volume_min
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;volume_half
 <LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;volume_full
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_WriteString
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_SetCursor
+<LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ssd1306_ClearBitmapArea
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2snprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_print

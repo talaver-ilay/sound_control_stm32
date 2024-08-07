@@ -740,12 +740,12 @@ ARM Macro Assembler    Page 12
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
 interwork --depend=ayk_keyboard\startup_stm32f401xc.d -oayk_keyboard\startup_st
-m32f401xc.o -I.\RTE\_AYK_KEYBOARD -IC:\Users\Talaver\AppData\Local\Arm\Packs\AR
-M\CMSIS\5.7.0\CMSIS\Core\Include -IC:\Users\Talaver\AppData\Local\Arm\Packs\Kei
-l\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="_
-_UVISION_VERSION SETA 532" --predefine="_RTE_ SETA 1" --predefine="STM32F401xC 
-SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f401xc.lst startup_stm32
-f401xc.s
+m32f401xc.o -I.\RTE\_AYK_KEYBOARD -IC:\Users\admin\AppData\Local\Arm\Packs\ARM\
+CMSIS\5.7.0\CMSIS\Core\Include -IC:\Users\admin\AppData\Local\Arm\Packs\Keil\ST
+M32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__UVI
+SION_VERSION SETA 532" --predefine="_RTE_ SETA 1" --predefine="STM32F401xC SETA
+ 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f401xc.lst startup_stm32f401
+xc.s
 
 
 
